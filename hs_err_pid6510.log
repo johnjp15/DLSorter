@@ -1,0 +1,424 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Cannot create GC thread. Out of system resources.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (gcTaskThread.cpp:48), pid=6510, tid=140392604362496
+#
+# JRE version:  (8.0_45-b14) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.45-b02 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fafac022000):  JavaThread "Unknown thread" [_thread_in_vm, id=6511, stack(0x00007fafb33fe000,0x00007fafb34ff000)]
+
+Stack: [0x00007fafb33fe000,0x00007fafb34ff000],  sp=0x00007fafb34fd5e0,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xaac99a]  VMError::report_and_die()+0x2ba
+V  [libjvm.so+0x4f333b]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*)+0x8b
+V  [libjvm.so+0x5caf3f]  GCTaskThread::GCTaskThread(GCTaskManager*, unsigned int, unsigned int)+0x15f
+V  [libjvm.so+0x5c974b]  GCTaskManager::initialize()+0x3ab
+V  [libjvm.so+0x93188d]  ParallelScavengeHeap::initialize()+0x34d
+V  [libjvm.so+0xa75aab]  Universe::initialize_heap()+0xfb
+V  [libjvm.so+0xa75e1e]  universe_init()+0x3e
+V  [libjvm.so+0x62f635]  init_globals()+0x65
+V  [libjvm.so+0xa5a02e]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x23e
+V  [libjvm.so+0x6c3244]  JNI_CreateJavaVM+0x74
+C  [libjli.so+0x745e]  JavaMain+0x9e
+C  [libpthread.so.0+0x83a4]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00007fafac022000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=6511, stack(0x00007fafb33fe000,0x00007fafb34ff000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 fc:02 2360717                            /opt/oracle-jdk-bin-1.8.0.45/bin/javac
+00600000-00601000 rw-p 00000000 fc:02 2360717                            /opt/oracle-jdk-bin-1.8.0.45/bin/javac
+00601000-00622000 rw-p 00000000 00:00 0                                  [heap]
+c3600000-c3b80000 rw-p 00000000 00:00 0 
+c3b80000-ebd00000 ---p 00000000 00:00 0 
+ebd00000-ebf80000 rw-p 00000000 00:00 0 
+ebf80000-100000000 ---p 00000000 00:00 0 
+7faf9a8c7000-7faf9ab4b000 rw-p 00000000 00:00 0 
+7faf9ab4b000-7faf9ab4c000 ---p 00000000 00:00 0 
+7faf9ab4c000-7faf9ac4f000 rw-p 00000000 00:00 0 
+7faf9ac4f000-7faf9ad8f000 ---p 00000000 00:00 0 
+7faf9ad8f000-7faf9ad91000 rw-p 00000000 00:00 0 
+7faf9ad91000-7faf9ae31000 ---p 00000000 00:00 0 
+7faf9ae31000-7faf9ae3c000 rw-p 00000000 00:00 0 
+7faf9ae3c000-7faf9b1f2000 ---p 00000000 00:00 0 
+7faf9b1f2000-7faf9b462000 rwxp 00000000 00:00 0 
+7faf9b462000-7fafaa1f2000 ---p 00000000 00:00 0 
+7fafaa1f2000-7fafaa20c000 r-xp 00000000 fc:02 2360444                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/libzip.so
+7fafaa20c000-7fafaa40c000 ---p 0001a000 fc:02 2360444                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/libzip.so
+7fafaa40c000-7fafaa40d000 rw-p 0001a000 fc:02 2360444                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/libzip.so
+7fafaa40d000-7fafaa412000 r-xp 00000000 08:02 262528                     /lib64/libnss_dns-2.20.so
+7fafaa412000-7fafaa611000 ---p 00005000 08:02 262528                     /lib64/libnss_dns-2.20.so
+7fafaa611000-7fafaa612000 r--p 00004000 08:02 262528                     /lib64/libnss_dns-2.20.so
+7fafaa612000-7fafaa613000 rw-p 00005000 08:02 262528                     /lib64/libnss_dns-2.20.so
+7fafaa613000-7fafaa628000 r-xp 00000000 08:02 262555                     /lib64/libz.so.1.2.8
+7fafaa628000-7fafaa827000 ---p 00015000 08:02 262555                     /lib64/libz.so.1.2.8
+7fafaa827000-7fafaa828000 r--p 00014000 08:02 262555                     /lib64/libz.so.1.2.8
+7fafaa828000-7fafaa829000 rw-p 00015000 08:02 262555                     /lib64/libz.so.1.2.8
+7fafaa829000-7fafaa82c000 r-xp 00000000 08:02 262554                     /lib64/libkeyutils.so.1.5
+7fafaa82c000-7fafaaa2b000 ---p 00003000 08:02 262554                     /lib64/libkeyutils.so.1.5
+7fafaaa2b000-7fafaaa2c000 r--p 00002000 08:02 262554                     /lib64/libkeyutils.so.1.5
+7fafaaa2c000-7fafaaa2d000 rw-p 00003000 08:02 262554                     /lib64/libkeyutils.so.1.5
+7fafaaa2d000-7fafaaa38000 r-xp 00000000 fc:01 802960                     /usr/lib64/libkrb5support.so.0.1
+7fafaaa38000-7fafaac37000 ---p 0000b000 fc:01 802960                     /usr/lib64/libkrb5support.so.0.1
+7fafaac37000-7fafaac38000 r--p 0000a000 fc:01 802960                     /usr/lib64/libkrb5support.so.0.1
+7fafaac38000-7fafaac39000 rw-p 0000b000 fc:01 802960                     /usr/lib64/libkrb5support.so.0.1
+7fafaac39000-7fafaac3c000 r-xp 00000000 08:02 262512                     /lib64/libcom_err.so.2.1
+7fafaac3c000-7fafaae3b000 ---p 00003000 08:02 262512                     /lib64/libcom_err.so.2.1
+7fafaae3b000-7fafaae3c000 r--p 00002000 08:02 262512                     /lib64/libcom_err.so.2.1
+7fafaae3c000-7fafaae3d000 rw-p 00003000 08:02 262512                     /lib64/libcom_err.so.2.1
+7fafaae3d000-7fafaae6b000 r-xp 00000000 fc:01 802741                     /usr/lib64/libk5crypto.so.3.1
+7fafaae6b000-7fafab06a000 ---p 0002e000 fc:01 802741                     /usr/lib64/libk5crypto.so.3.1
+7fafab06a000-7fafab06c000 r--p 0002d000 fc:01 802741                     /usr/lib64/libk5crypto.so.3.1
+7fafab06c000-7fafab06d000 rw-p 0002f000 fc:01 802741                     /usr/lib64/libk5crypto.so.3.1
+7fafab06d000-7fafab06e000 rw-p 00000000 00:00 0 
+7fafab06e000-7fafab132000 r-xp 00000000 fc:01 802742                     /usr/lib64/libkrb5.so.3.3
+7fafab132000-7fafab331000 ---p 000c4000 fc:01 802742                     /usr/lib64/libkrb5.so.3.3
+7fafab331000-7fafab33e000 r--p 000c3000 fc:01 802742                     /usr/lib64/libkrb5.so.3.3
+7fafab33e000-7fafab341000 rw-p 000d0000 fc:01 802742                     /usr/lib64/libkrb5.so.3.3
+7fafab341000-7fafab4ea000 r-xp 00000000 fc:01 792669                     /usr/lib64/libcrypto.so.1.0.0
+7fafab4ea000-7fafab6ea000 ---p 001a9000 fc:01 792669                     /usr/lib64/libcrypto.so.1.0.0
+7fafab6ea000-7fafab704000 r--p 001a9000 fc:01 792669                     /usr/lib64/libcrypto.so.1.0.0
+7fafab704000-7fafab70f000 rw-p 001c3000 fc:01 792669                     /usr/lib64/libcrypto.so.1.0.0
+7fafab70f000-7fafab713000 rw-p 00000000 00:00 0 
+7fafab713000-7fafab779000 r-xp 00000000 fc:01 802958                     /usr/lib64/libssl.so.1.0.0
+7fafab779000-7fafab978000 ---p 00066000 fc:01 802958                     /usr/lib64/libssl.so.1.0.0
+7fafab978000-7fafab97c000 r--p 00065000 fc:01 802958                     /usr/lib64/libssl.so.1.0.0
+7fafab97c000-7fafab983000 rw-p 00069000 fc:01 802958                     /usr/lib64/libssl.so.1.0.0
+7fafab983000-7fafab99f000 r-xp 00000000 fc:01 789395                     /usr/lib64/libsasl2.so.3.0.0
+7fafab99f000-7fafabb9e000 ---p 0001c000 fc:01 789395                     /usr/lib64/libsasl2.so.3.0.0
+7fafabb9e000-7fafabb9f000 r--p 0001b000 fc:01 789395                     /usr/lib64/libsasl2.so.3.0.0
+7fafabb9f000-7fafabba0000 rw-p 0001c000 fc:01 789395                     /usr/lib64/libsasl2.so.3.0.0
+7fafabba0000-7fafabbb3000 r-xp 00000000 08:02 262529                     /lib64/libresolv-2.20.so
+7fafabbb3000-7fafabdb3000 ---p 00013000 08:02 262529                     /lib64/libresolv-2.20.so
+7fafabdb3000-7fafabdb4000 r--p 00013000 08:02 262529                     /lib64/libresolv-2.20.so
+7fafabdb4000-7fafabdb5000 rw-p 00014000 08:02 262529                     /lib64/libresolv-2.20.so
+7fafabdb5000-7fafabdb7000 rw-p 00000000 00:00 0 
+7fafabdb7000-7fafabdfd000 r-xp 00000000 fc:01 794804                     /usr/lib64/libgssapi_krb5.so.2.2
+7fafabdfd000-7fafabffd000 ---p 00046000 fc:01 794804                     /usr/lib64/libgssapi_krb5.so.2.2
+7fafabffd000-7fafabffe000 r--p 00046000 fc:01 794804                     /usr/lib64/libgssapi_krb5.so.2.2
+7fafabffe000-7fafac000000 rw-p 00047000 fc:01 794804                     /usr/lib64/libgssapi_krb5.so.2.2
+7fafac000000-7fafac046000 rw-p 00000000 00:00 0 
+7fafac046000-7fafb0000000 ---p 00000000 00:00 0 
+7fafb0050000-7fafb0053000 rw-p 00000000 00:00 0 
+7fafb0053000-7fafb0194000 ---p 00000000 00:00 0 
+7fafb0194000-7fafb01a2000 r-xp 00000000 fc:01 789561                     /usr/lib64/liblber-2.4.so.2.10.1
+7fafb01a2000-7fafb03a1000 ---p 0000e000 fc:01 789561                     /usr/lib64/liblber-2.4.so.2.10.1
+7fafb03a1000-7fafb03a2000 r--p 0000d000 fc:01 789561                     /usr/lib64/liblber-2.4.so.2.10.1
+7fafb03a2000-7fafb03a3000 rw-p 0000e000 fc:01 789561                     /usr/lib64/liblber-2.4.so.2.10.1
+7fafb03a3000-7fafb03ed000 r-xp 00000000 fc:01 789559                     /usr/lib64/libldap-2.4.so.2.10.1
+7fafb03ed000-7fafb05ec000 ---p 0004a000 fc:01 789559                     /usr/lib64/libldap-2.4.so.2.10.1
+7fafb05ec000-7fafb05ed000 r--p 00049000 fc:01 789559                     /usr/lib64/libldap-2.4.so.2.10.1
+7fafb05ed000-7fafb05ef000 rw-p 0004a000 fc:01 789559                     /usr/lib64/libldap-2.4.so.2.10.1
+7fafb05ef000-7fafb0603000 r-xp 00000000 08:02 262624                     /lib64/libnss_ldap-2.20.so
+7fafb0603000-7fafb0802000 ---p 00014000 08:02 262624                     /lib64/libnss_ldap-2.20.so
+7fafb0802000-7fafb0803000 r--p 00013000 08:02 262624                     /lib64/libnss_ldap-2.20.so
+7fafb0803000-7fafb0804000 rw-p 00014000 08:02 262624                     /lib64/libnss_ldap-2.20.so
+7fafb0804000-7fafb080f000 rw-p 00000000 00:00 0 
+7fafb080f000-7fafb081a000 r-xp 00000000 08:02 261376                     /lib64/libnss_files-2.20.so
+7fafb081a000-7fafb0a19000 ---p 0000b000 08:02 261376                     /lib64/libnss_files-2.20.so
+7fafb0a19000-7fafb0a1a000 r--p 0000a000 08:02 261376                     /lib64/libnss_files-2.20.so
+7fafb0a1a000-7fafb0a1b000 rw-p 0000b000 08:02 261376                     /lib64/libnss_files-2.20.so
+7fafb0a1b000-7fafb0a25000 r-xp 00000000 08:02 261343                     /lib64/libnss_nis-2.20.so
+7fafb0a25000-7fafb0c24000 ---p 0000a000 08:02 261343                     /lib64/libnss_nis-2.20.so
+7fafb0c24000-7fafb0c25000 r--p 00009000 08:02 261343                     /lib64/libnss_nis-2.20.so
+7fafb0c25000-7fafb0c26000 rw-p 0000a000 08:02 261343                     /lib64/libnss_nis-2.20.so
+7fafb0c26000-7fafb0c3a000 r-xp 00000000 08:02 262515                     /lib64/libnsl-2.20.so
+7fafb0c3a000-7fafb0e3a000 ---p 00014000 08:02 262515                     /lib64/libnsl-2.20.so
+7fafb0e3a000-7fafb0e3b000 r--p 00014000 08:02 262515                     /lib64/libnsl-2.20.so
+7fafb0e3b000-7fafb0e3c000 rw-p 00015000 08:02 262515                     /lib64/libnsl-2.20.so
+7fafb0e3c000-7fafb0e3e000 rw-p 00000000 00:00 0 
+7fafb0e3e000-7fafb0e45000 r-xp 00000000 08:02 262532                     /lib64/libnss_compat-2.20.so
+7fafb0e45000-7fafb1044000 ---p 00007000 08:02 262532                     /lib64/libnss_compat-2.20.so
+7fafb1044000-7fafb1045000 r--p 00006000 08:02 262532                     /lib64/libnss_compat-2.20.so
+7fafb1045000-7fafb1046000 rw-p 00007000 08:02 262532                     /lib64/libnss_compat-2.20.so
+7fafb1046000-7fafb1070000 r-xp 00000000 fc:02 2360495                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/libjava.so
+7fafb1070000-7fafb1270000 ---p 0002a000 fc:02 2360495                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/libjava.so
+7fafb1270000-7fafb1272000 rw-p 0002a000 fc:02 2360495                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/libjava.so
+7fafb1272000-7fafb127f000 r-xp 00000000 fc:02 2360505                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/libverify.so
+7fafb127f000-7fafb147f000 ---p 0000d000 fc:02 2360505                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/libverify.so
+7fafb147f000-7fafb1481000 rw-p 0000d000 fc:02 2360505                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/libverify.so
+7fafb1481000-7fafb1488000 r-xp 00000000 08:02 262533                     /lib64/librt-2.20.so
+7fafb1488000-7fafb1687000 ---p 00007000 08:02 262533                     /lib64/librt-2.20.so
+7fafb1687000-7fafb1688000 r--p 00006000 08:02 262533                     /lib64/librt-2.20.so
+7fafb1688000-7fafb1689000 rw-p 00007000 08:02 262533                     /lib64/librt-2.20.so
+7fafb1689000-7fafb1789000 r-xp 00000000 08:02 262530                     /lib64/libm-2.20.so
+7fafb1789000-7fafb1988000 ---p 00100000 08:02 262530                     /lib64/libm-2.20.so
+7fafb1988000-7fafb1989000 r--p 000ff000 08:02 262530                     /lib64/libm-2.20.so
+7fafb1989000-7fafb198a000 rw-p 00100000 08:02 262530                     /lib64/libm-2.20.so
+7fafb198a000-7fafb2638000 r-xp 00000000 fc:02 2360502                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/server/libjvm.so
+7fafb2638000-7fafb2837000 ---p 00cae000 fc:02 2360502                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/server/libjvm.so
+7fafb2837000-7fafb290e000 rw-p 00cad000 fc:02 2360502                    /opt/oracle-jdk-bin-1.8.0.45/jre/lib/amd64/server/libjvm.so
+7fafb290e000-7fafb2952000 rw-p 00000000 00:00 0 
+7fafb2952000-7fafb2ae1000 r-xp 00000000 08:02 262527                     /lib64/libc-2.20.so
+7fafb2ae1000-7fafb2ce0000 ---p 0018f000 08:02 262527                     /lib64/libc-2.20.so
+7fafb2ce0000-7fafb2ce4000 r--p 0018e000 08:02 262527                     /lib64/libc-2.20.so
+7fafb2ce4000-7fafb2ce6000 rw-p 00192000 08:02 262527                     /lib64/libc-2.20.so
+7fafb2ce6000-7fafb2cea000 rw-p 00000000 00:00 0 
+7fafb2cea000-7fafb2cec000 r-xp 00000000 08:02 262516                     /lib64/libdl-2.20.so
+7fafb2cec000-7fafb2eec000 ---p 00002000 08:02 262516                     /lib64/libdl-2.20.so
+7fafb2eec000-7fafb2eed000 r--p 00002000 08:02 262516                     /lib64/libdl-2.20.so
+7fafb2eed000-7fafb2eee000 rw-p 00003000 08:02 262516                     /lib64/libdl-2.20.so
+7fafb2eee000-7fafb2f03000 r-xp 00000000 fc:02 2362005                    /opt/oracle-jdk-bin-1.8.0.45/lib/amd64/jli/libjli.so
+7fafb2f03000-7fafb3103000 ---p 00015000 fc:02 2362005                    /opt/oracle-jdk-bin-1.8.0.45/lib/amd64/jli/libjli.so
+7fafb3103000-7fafb3104000 rw-p 00015000 fc:02 2362005                    /opt/oracle-jdk-bin-1.8.0.45/lib/amd64/jli/libjli.so
+7fafb3104000-7fafb311a000 r-xp 00000000 08:02 262524                     /lib64/libpthread-2.20.so
+7fafb311a000-7fafb3319000 ---p 00016000 08:02 262524                     /lib64/libpthread-2.20.so
+7fafb3319000-7fafb331a000 r--p 00015000 08:02 262524                     /lib64/libpthread-2.20.so
+7fafb331a000-7fafb331b000 rw-p 00016000 08:02 262524                     /lib64/libpthread-2.20.so
+7fafb331b000-7fafb331f000 rw-p 00000000 00:00 0 
+7fafb331f000-7fafb3340000 r-xp 00000000 08:02 262534                     /lib64/ld-2.20.so
+7fafb33fe000-7fafb3401000 ---p 00000000 00:00 0 
+7fafb3401000-7fafb3503000 rw-p 00000000 00:00 0                          [stack:6511]
+7fafb3531000-7fafb3534000 rw-p 00000000 00:00 0 
+7fafb3534000-7fafb353c000 rw-s 00000000 fc:05 131088                     /tmp/hsperfdata_2015jpark/6510
+7fafb353c000-7fafb353d000 rw-p 00000000 00:00 0 
+7fafb353d000-7fafb353e000 r--p 00000000 00:00 0 
+7fafb353e000-7fafb353f000 rw-p 00000000 00:00 0 
+7fafb353f000-7fafb3540000 r--p 00020000 08:02 262534                     /lib64/ld-2.20.so
+7fafb3540000-7fafb3541000 rw-p 00021000 08:02 262534                     /lib64/ld-2.20.so
+7fafb3541000-7fafb3542000 rw-p 00000000 00:00 0 
+7ffe49d95000-7ffe49db6000 rw-p 00000000 00:00 0                          [stack]
+7ffe49dd5000-7ffe49dd6000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Denv.class.path=.:::/usr/share/jgrasp/extensions/classes -Dapplication.home=/opt/oracle-jdk-bin-1.8.0.45 -Xms8m 
+java_command: com.sun.tools.javac.Main -g DLSorter.java
+java_class_path (initial): /opt/oracle-jdk-bin-1.8.0.45/lib/tools.jar:/opt/oracle-jdk-bin-1.8.0.45/classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/etc/java-config-2/current-system-vm
+CLASSPATH=.:::/usr/share/jgrasp/extensions/classes
+PATH=:/opt/oracle-jdk-bin-1.8.0.45/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.8.4:/opt/mathematica/bin:/opt/cuda/bin
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xaad1e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xaad1e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x90b450], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x90b450], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x90b450], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x90b450], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x90ca90], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Gentoo Base System release 2.2
+
+uname:Linux 3.14.40-wkstn #7 SMP Wed Apr 29 08:47:52 EDT 2015 x86_64
+libc:glibc 2.20 NPTL 2.20 
+rlimit: STACK 8192k, CORE 0k, NPROC 300, NOFILE 4096, AS infinity
+load average:0.04 0.07 0.09
+
+/proc/meminfo:
+MemTotal:        3966228 kB
+MemFree:         1243756 kB
+MemAvailable:    1727908 kB
+Buffers:           72612 kB
+Cached:           618440 kB
+SwapCached:            0 kB
+Active:          2044964 kB
+Inactive:         462944 kB
+Active(anon):    1822932 kB
+Inactive(anon):    63088 kB
+Active(file):     222032 kB
+Inactive(file):   399856 kB
+Unevictable:       14872 kB
+Mlocked:           14872 kB
+SwapTotal:       2097148 kB
+SwapFree:        2097148 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:       1831776 kB
+Mapped:           272908 kB
+Shmem:             63756 kB
+Slab:              92756 kB
+SReclaimable:      62400 kB
+SUnreclaim:        30356 kB
+KernelStack:        4288 kB
+PageTables:        35116 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     4080260 kB
+Committed_AS:    5111656 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      113840 kB
+VmallocChunk:   34359610364 kB
+AnonHugePages:    442368 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      130984 kB
+DirectMap2M:     2924544 kB
+DirectMap1G:     1048576 kB
+
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, lzcnt, tsc, tscinvbit, bmi1, bmi2
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
+stepping	: 3
+microcode	: 0x1a
+cpu MHz		: 3292.678
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm ida arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm
+bogomips	: 6585.35
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
+stepping	: 3
+microcode	: 0x1a
+cpu MHz		: 3292.678
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm ida arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm
+bogomips	: 6585.35
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
+stepping	: 3
+microcode	: 0x1a
+cpu MHz		: 3292.678
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm ida arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm
+bogomips	: 6585.35
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 60
+model name	: Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz
+stepping	: 3
+microcode	: 0x1a
+cpu MHz		: 3292.678
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 3
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm ida arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm
+bogomips	: 6585.35
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 3966228k(1243756k free), swap 2097148k(2097148k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.45-b02) for linux-amd64 JRE (1.8.0_45-b14), built on Apr 10 2015 10:07:45 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Tue May  5 11:36:52 2015
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
